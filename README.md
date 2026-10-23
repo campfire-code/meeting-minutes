@@ -1,3 +1,53 @@
+# 会议纪要助手（Meetily）
+
+> 篝火出品 · 收录于篝火 App 应用区 · 基于开源项目 [Zackriya-Solutions/meetily](https://github.com/Zackriya-Solutions/meetily)（MIT）
+
+在自己电脑上录会议、实时转写并生成纪要，**录音和文字不上传云端**，适合对内部会议保密有要求的团队。
+
+## 下载
+
+到 [Releases](https://github.com/campfire-code/meeting-minutes/releases/latest) 下载：
+
+| 电脑 | 文件 |
+|---|---|
+| Windows 10 / 11 | `meeting-minutes_版本号_meetily_…_x64-setup.exe` |
+| Mac（Apple 芯片：M1 / M2 / M3 / M4） | `meeting-minutes_版本号_meetily_…_aarch64.dmg` |
+
+- 安装包来自上游官方发布，篝火没有修改，附 `SHA256SUMS.txt` 可核对。
+- 上游没有提供 Intel 芯片 Mac 的版本。
+
+## 怎么用
+
+1. 安装后打开，按提示授予**麦克风**和**系统录音（屏幕录制）**权限，这样才能同时录下自己和对方的声音。
+2. 第一次使用时按引导下载语音转写模型。模型较大，请保持联网，之后可离线转写。
+3. 开会时点开始录制，界面实时显示转写文字；结束后点生成纪要。
+4. 生成纪要需要大模型：可以在设置里接本机的 Ollama（完全离线），也可以填自己的云端大模型接口。
+
+**说明**
+- 软件界面是英文。
+- 中文转写效果取决于选用的转写模型，正式使用前请先用一段中文会议录音试一试。
+- 上游另有收费的 PRO 版本，本仓库只转发布免费的社区版。
+
+## 验收用例
+
+| 操作 | 应得到 |
+|---|---|
+| 安装并打开，授予麦克风权限，开始录制后说一段话 | 界面实时出现转写文字 |
+| 停止录制，点生成纪要（已配置大模型） | 生成会议摘要与待办 |
+
+## 和上游的区别
+
+- 仅新增中文说明与篝火发布流程（`tool.json`、`.github/workflows/release.yml`），软件代码与上游一致。
+- 移除了上游用于编译、签名的工作流，这些依赖上游的签名证书和密钥。
+
+## 归属与许可证
+
+本仓库由**篝火**整理发布，是篝火 App 应用区收录的开源工具之一。软件全部功能与版权归 [Zackriya-Solutions/meetily](https://github.com/Zackriya-Solutions/meetily) 原作者所有，按 MIT 许可证再分发。全部工具目录见 [toolkit-hub](https://github.com/campfire-code/toolkit-hub)。
+
+---
+
+以下为上游原始说明：
+
 <div align="center" style="border-bottom: none">
     <h1>
         <img src="docs/Meetily-6.png" style="border-radius: 10px;" />
